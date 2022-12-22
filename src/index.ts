@@ -8,8 +8,8 @@ app.http('screenshot', {
   handler: async (context: InvocationContext, request: HttpRequest) => {
     const page = await browser.newPage();
     await page.goto(request.query.get('url') || 'https://www.microsoft.com/en-us/', { waitUntil: 'networkidle2' });
-    const ss = await page.pdf();
+    const pdf = await page.pdf();
     page.close();
-    return { body: ss };
+    return { body: pdf };
   }
 });
