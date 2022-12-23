@@ -5,7 +5,7 @@ const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setui
 
 app.http('screenshot', {
   methods: ['GET'],
-  handler: async (context: InvocationContext, request: HttpRequest) => {
+  handler: async (_: InvocationContext, request: HttpRequest) => {
     const page = await browser.newPage();
     await page.goto(request.query.get('url') || 'https://www.microsoft.com/en-us/', { waitUntil: 'networkidle2' });
     const pdf = await page.pdf();

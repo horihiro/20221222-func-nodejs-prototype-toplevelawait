@@ -15,6 +15,7 @@
     "puppeteer": "^19.4.1"
   },
   "devDependencies": {
+    "@tsconfig/node18-strictest-esm": "^1.0.1",
     "@types/chai": "^4.0.0",
     "@types/mocha": "^9.0.0",
     "@types/node": "^18.0.0",
